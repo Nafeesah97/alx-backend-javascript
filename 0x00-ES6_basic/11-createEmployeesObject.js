@@ -4,5 +4,5 @@ export default function createEmployeesObject(departmentName, employees) {
     const quote = "'";
     newArr.push(quote + x + quote);
   }
-  return `{ ${departmentName}: [${newArr}] }`;
+  return `{ ${departmentName}: [ ${newArr} ] }`;
 }
