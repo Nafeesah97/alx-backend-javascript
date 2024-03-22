@@ -8,11 +8,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       const result = [];
       result.push({
         status: signUpRes.status,
-        value: signUpRes.status === 'fulfilled' ? signUpRes.value : signUpRes.reason,
+        value: signUpRes.status === 'fulfilled' ? signUpRes.value : String(signUpRes.reason),
       });
       result.push({
         status: photoRes.status,
-        value: photoRes.status === 'fulfiled' ? photoRes.value : photoRes.reason,
+        value: photoRes.status === 'fulfiled' ? photoRes.value : String(photoRes.reason),
       });
       return result;
     });
