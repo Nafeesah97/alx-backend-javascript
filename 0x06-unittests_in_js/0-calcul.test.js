@@ -1,17 +1,36 @@
 const assert = require('assert');
-const calculateNumber = require('./0-calcul.js');
+const calculateNumber = require('./0-calcul');
 
-describe('calculateNumber', function() {
-  it('checks the addition function', function() {
-    assert.strictequal(calculateNumber(2.5, 3.5), 7);
+describe('calculateNumber', () => {
+  it('floating point whole numbers', () => {
+    assert.strictEqual(calculateNumber(1.0, 2.0), 3);
   });
-  it('checks wthout rounding up', function() {
-    assert.strictequal(calculateNumber(2, 3), 5);
+
+  it('rounding down b\'s floating point fractional number', () => {
+    assert.strictEqual(calculateNumber(1.0, 2.4), 3);
   });
-  it('with second number being a float', function() {
-    assert.strictequal(calculateNumber(2, 3.5), 6);
+
+  it('rounding down a and b\'s floating point fractional number', () => {
+    assert.strictEqual(calculateNumber(1.4, 2.4), 3);
   });
-  it('first number is a  float', function() {
-    assert.strictequal(calculateNumber(2.5, 3), 6);
+
+  it('rounding down a\'s floating point fractional number', () => {
+    assert.strictEqual(calculateNumber(1.4, 2.0), 3);
+  });
+
+  it('rounding up b\'s floating point fractional numbers', () => {
+    assert.strictEqual(calculateNumber(1.0, 2.5), 4);
+  });
+
+  it('rounding up a and b\'s floating point fractional numbers', () => {
+    assert.strictEqual(calculateNumber(2.6, 2.5), 6);
+  });
+
+  it('rounding up a\'s floating point fractional numbers', () => {
+    assert.strictEqual(calculateNumber(2.6, 2.0), 5);
+  });
+
+  it('rounding down a and b floating point fractional numbers with trailing 9\'s', () => {
+    assert.strictEqual(calculateNumber(2.499999, 3.499999), 5);
   });
 });
