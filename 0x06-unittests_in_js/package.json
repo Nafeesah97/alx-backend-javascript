@@ -4,5 +4,8 @@
   },
   "dependencies": {
     "chai": "^5.1.0"
+  },
+  "devDependencies": {
+    "sinon": "^17.0.1"
   }
 }
