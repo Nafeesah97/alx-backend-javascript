@@ -9,7 +9,7 @@ describe('using hooks to check sendpaymenttoapi', () => {
     pymentstub = sinon.spy(console, 'log');
   });
   afterEach(() => {
-    pymentstub.restore();
+    pymentstub.resetHistory();
   });
   it('checks the payment function', () => {
     sendPaymentRequestToApi(100, 20);
