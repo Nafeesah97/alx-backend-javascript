@@ -1,6 +1,6 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const sendPaymentRequestToApi = require('./6-payment');
+const sendPaymentRequestToApi = require('./5-payment');
 
 describe('using hooks to check sendpaymenttoapi', () => {
   let pymentStub;
