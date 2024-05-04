@@ -1,12 +1,13 @@
 const sinon = require('sinon');
-const Utils = require('./utils');
 const { expect } = require('chai');
 const sendPaymentRequestToApi = require('./6-payment');
 
 describe('using hooks to check sendpaymenttoapi', () => {
   let pymentStub;
   beforeEach(() => {
-    pymentstub = sinon.spy(console, 'log');
+    if(!pymentstub) {
+      pymentstub = sinon.spy(console, 'log');
+    }
   });
   afterEach(() => {
     pymentstub.resetHistory();
