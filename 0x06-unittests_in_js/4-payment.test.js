@@ -12,7 +12,7 @@ describe('sendPaymentRequestToApi', () => {
     expect(bigBrother.calledWith('SUM', 100, 20)).to.be.true;
     expect(bigBrother.callCount).to.be.equal(1);
     expect(spyr.calledWith('The total is: 10')).to.be.true;
-    expect(spyr.callCount)).to.be.equal(1);
+    expect(spyr.callCount).to.be.equal(1);
     bigBrother.restore();
     spyr.restore();
   });
