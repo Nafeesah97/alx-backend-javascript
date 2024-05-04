@@ -1,5 +1,5 @@
 const sinon = require('sinon');
-const assert = require('assert');
+const { expect } = require('chai');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
 
@@ -9,10 +9,10 @@ describe('sendPaymentRequestToApi', () => {
     const spyr = sinon.spy(console, 'log');
 
     sendPaymentRequestToApi(100, 20);
-    assert(bigBrother.calledWith('SUM', 100, 20), 'Utils.calculateNumber should be called with type = SUM, a = 100, and b = 20');
-    ssert.strictEqual(bigBrother.callCount, 1);
-    assert(spyr.calledWith('The total is: 10'), 'console.log should be called with correct message');
-    assert.strictEqual(spyr.callCount, 1);
+    expect(bigBrother.calledWith('SUM', 100, 20)).to.be.true;
+    expect(bigBrother.callCount).to.be.equal(1);
+    expect(spyr.calledWith('The total is: 10')).to.be.true;
+    expect(spyr.callCount)).to.be.equal(1);
     bigBrother.restore();
     spyr.restore();
   });
